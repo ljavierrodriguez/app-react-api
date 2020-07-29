@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Register from './views/register';
+import Login from './views/login';
+import UpdateProfile from './views/updateprofile';
+
+import NotFound from './views/notfound';
+
+import injectContext from './store/appContext';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={UpdateProfile} />
+        <Route component={NotFound} />
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default injectContext(App);
