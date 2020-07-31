@@ -31,7 +31,6 @@ const Login = props => {
                         placeholder="Ingrese Email"
                         defaultValue={store.email}
                         onChange={actions.handleChange}
-                        required
                     />
                 </div>
                 <div className="form-group">
@@ -44,7 +43,6 @@ const Login = props => {
                         placeholder="Ingrese password"
                         defaultValue={store.password}
                         onChange={actions.handleChange}
-                        required
                     />
                 </div>
 
